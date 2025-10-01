@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrapper(); // set wrapper as the home
+    return MaterialApp(home: Wrapper()); // set wrapper as the home
   }
 }

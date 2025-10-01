@@ -10,6 +10,12 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Login Screen"));
+    return Scaffold(
+      appBar: AppBar(title: const Text("Login")),
+      body: ElevatedButton(
+        onPressed: () {},
+        child: Text("Sign in Anonymously"),
+      ),
+    );
   }
 }
