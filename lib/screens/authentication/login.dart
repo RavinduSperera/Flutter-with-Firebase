@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
           if (result == Null) {
             print("Error in Sign in ANony");
           } else {
-            print("Sign in Anony");
+            print("Sign in Anonymously");
             print(result.uid);
           }
         },
