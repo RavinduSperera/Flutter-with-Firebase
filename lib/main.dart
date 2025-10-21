@@ -1,6 +1,9 @@
+import 'package:firebase_auth_app/models/UserModel.dart';
 import 'package:firebase_auth_app/screens/wrapper.dart';
+import 'package:firebase_auth_app/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Wrapper()); // set wrapper as the home
+    return StreamProvider<UserModel?>.value(
+      initialData: UserModel(uid: ""),
+      value: AuthServices().user,
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: Wrapper()),
+    );
   }
 }
